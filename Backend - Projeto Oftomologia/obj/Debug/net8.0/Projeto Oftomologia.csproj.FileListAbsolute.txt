@@ -1,0 +1,42 @@
+C:\Users\moise\OneDrive\Área de Trabalho\Projeto Oftomologia\bin\Debug\net8.0\Projeto Oftomologia.exe
+C:\Users\moise\OneDrive\Área de Trabalho\Projeto Oftomologia\bin\Debug\net8.0\Projeto Oftomologia.deps.json
+C:\Users\moise\OneDrive\Área de Trabalho\Projeto Oftomologia\bin\Debug\net8.0\Projeto Oftomologia.runtimeconfig.json
+C:\Users\moise\OneDrive\Área de Trabalho\Projeto Oftomologia\bin\Debug\net8.0\Projeto Oftomologia.dll
+C:\Users\moise\OneDrive\Área de Trabalho\Projeto Oftomologia\bin\Debug\net8.0\Projeto Oftomologia.pdb
+C:\Users\moise\OneDrive\Área de Trabalho\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\moise\OneDrive\Área de Trabalho\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.AssemblyInfoInputs.cache
+C:\Users\moise\OneDrive\Área de Trabalho\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.AssemblyInfo.cs
+C:\Users\moise\OneDrive\Área de Trabalho\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.csproj.CoreCompileInputs.cache
+C:\Users\moise\OneDrive\Área de Trabalho\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.dll
+C:\Users\moise\OneDrive\Área de Trabalho\Projeto Oftomologia\obj\Debug\net8.0\refint\Projeto Oftomologia.dll
+C:\Users\moise\OneDrive\Área de Trabalho\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.pdb
+C:\Users\moise\OneDrive\Área de Trabalho\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.genruntimeconfig.cache
+C:\Users\moise\OneDrive\Área de Trabalho\Projeto Oftomologia\obj\Debug\net8.0\ref\Projeto Oftomologia.dll
+E:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.GeneratedMSBuildEditorConfig.editorconfig
+E:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.AssemblyInfoInputs.cache
+E:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.AssemblyInfo.cs
+E:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.csproj.CoreCompileInputs.cache
+E:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.dll
+E:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\refint\Projeto Oftomologia.dll
+E:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.pdb
+E:\Algoritimos\Projeto Oftomologia\bin\Debug\net8.0\Projeto Oftomologia.exe
+E:\Algoritimos\Projeto Oftomologia\bin\Debug\net8.0\Projeto Oftomologia.deps.json
+E:\Algoritimos\Projeto Oftomologia\bin\Debug\net8.0\Projeto Oftomologia.runtimeconfig.json
+E:\Algoritimos\Projeto Oftomologia\bin\Debug\net8.0\Projeto Oftomologia.dll
+E:\Algoritimos\Projeto Oftomologia\bin\Debug\net8.0\Projeto Oftomologia.pdb
+E:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.genruntimeconfig.cache
+E:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\ref\Projeto Oftomologia.dll
+D:\Algoritimos\Projeto Oftomologia\bin\Debug\net8.0\Projeto Oftomologia.exe
+D:\Algoritimos\Projeto Oftomologia\bin\Debug\net8.0\Projeto Oftomologia.deps.json
+D:\Algoritimos\Projeto Oftomologia\bin\Debug\net8.0\Projeto Oftomologia.runtimeconfig.json
+D:\Algoritimos\Projeto Oftomologia\bin\Debug\net8.0\Projeto Oftomologia.dll
+D:\Algoritimos\Projeto Oftomologia\bin\Debug\net8.0\Projeto Oftomologia.pdb
+D:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.GeneratedMSBuildEditorConfig.editorconfig
+D:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.AssemblyInfoInputs.cache
+D:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.AssemblyInfo.cs
+D:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.csproj.CoreCompileInputs.cache
+D:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.dll
+D:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\refint\Projeto Oftomologia.dll
+D:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.pdb
+D:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\Projeto Oftomologia.genruntimeconfig.cache
+D:\Algoritimos\Projeto Oftomologia\obj\Debug\net8.0\ref\Projeto Oftomologia.dll
