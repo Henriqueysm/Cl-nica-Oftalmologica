@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clinica Oftalmologista">
+  <title> Consulta | Clinica Saúde Ocular </title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/png" href="saude 2.png">
+</head>
+
+
+
+
+<body class="fundo">
+
+  <a href="home.html">
+    <div class="topo"></div></a>
+     
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+    
+    <div class="nav-side-menu">
+  
+      <div class="menu-list">
+
+          <ul id="menu-content" class="menu-content collapse out">
+            <div class="welcome-container">
+              <h2>Bem-vindo, <span id="nomeUsuario"></span>!</h2>
+            </div>
+          
+            <div class="user-profile">
+              <img id="fotoUsuario" src="default-avatar.png" alt="img">
+              <span id="nomeUsuarioFooter"></span>
+            </div>
+            <li  data-toggle="collapse" data-target="#products" class="collapsed active">
+              <a href="#">
+                <span class="arrow"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                  <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                </svg>  </span></a>
+            </li>
+
+            <ul class="sub-menu collapse" id="products">
+                <li class=""><a href="home.html"> Pagina Inicial </a></li>
+                <li class=""><a href="Agendar.html"  onclick="mostrarAgendar()">Agendar Paciente </a></li>
+                <li class=""><a href="Consultar.html" onclick="mostrarConsultar()">Consultar Agendamento </a></li>
+
+            </ul>
+
+          </ul>
+          
+   </div>
+
+
+         <a href="Login.html">  <button class="button">
+            <div class="button-box">
+              <span class="button-elem">
+                <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+                  ></path>
+                </svg>
+              </span>
+              <span class="button-elem">
+                <svg viewBox="0 0 46 40">
+                  <path
+                    d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+          </button></a>
+          
+</div>
+
+
+<main>
+  <section class="consulta-container">
+    <h1>Consultar Agendamentos</h1>
+    <form>
+    <div class="form-group">
+        <label for="medico">Selecione um médico:</label>
+        <select id="medico">
+            <option value="" disabled selected>Todos os médicos</option>
+            <option value="Dr_Marcos">Dr. Marcos</option>
+            <option value="Dr_José">Dr. José</option>
+            <option value="Dra_Maria">Dra. Maria</option>
+        </select>
+     </form>
+<br><br>
+    <table id="tabelaAgendamentos">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Sobrenome </th>
+          <th>Cpf</th>
+          <th>Data de Nascimento</th>
+          <th>Médico</th>
+          <th>Data e hora consulta</th>
+          <th>Funcionário</th>
+        </tr>
+      </thead>
+      
+      <tbody id="tabela-agendamentos">
+        <!-- Agendamentos -->
+    </tbody>
+
+    </table>
+</section>
+</main>
+
+
+<script>
+  // Verificar se o usuário está logado
+function verificarLogin() {
+  const nomeUsuario = localStorage.getItem("nomeUsuario");
+
+  if (!nomeUsuario) {
+    // Redirecionar para a página de login se não estiver logado
+    alert("Você precisa estar logado para acessar esta página.");
+    window.location.href = "login.html";
+  }
+}
+
+// Chamar a função de validação ao carregar a página
+verificarLogin();
+
+
+  // Recuperar informações do usuário logado
+  const nomeUsuario = localStorage.getItem("nomeUsuario") || "Usuário";
+  const fotoUsuario = localStorage.getItem("fotoUsuario") || "default-avatar.png";
+
+  document.getElementById("nomeUsuario").textContent = nomeUsuario;
+  document.getElementById("nomeUsuarioFooter").textContent = nomeUsuario;
+  document.getElementById("fotoUsuario").src = fotoUsuario;
+
+
+
+  
+  // Exibir agendamentos na tabela
+  function exibirAgendamentos(filtrarPorMedico = null) {
+      const agendamentos = JSON.parse(localStorage.getItem("consultas")) || [];
+      const tabelaBody = document.querySelector("#tabelaAgendamentos tbody");
+
+      tabelaBody.innerHTML = ""; // Limpar tabela antes de exibir
+
+      // Filtrar por médico, se necessário
+      const agendamentosFiltrados = filtrarPorMedico
+          ? agendamentos.filter(agendamento => agendamento.medico === filtrarPorMedico)
+          : agendamentos;
+
+      if (agendamentosFiltrados.length === 0) {
+          tabelaBody.innerHTML = `<tr><td colspan="4">Nenhuma consulta encontrada.</td></tr>`;
+          return;
+      }
+
+      // Preencher tabela com os agendamentos
+      agendamentosFiltrados.forEach((agendamento, index) => {
+          const row = document.createElement("tr");
+
+          row.innerHTML = `
+              <td>${agendamento.nome}</td>
+              <td> ${agendamento.sobrenome}</td>
+              <td> ${agendamento.cpf}</td>
+              <td> ${agendamento.dataNascimento}</td>
+              <td>${agendamento.medico}</td>
+              <td>${agendamento.horario}</td>
+              <td>${agendamento.agendadoPor}</td>
+              <td><button onclick="excluirConsulta(${index})">Excluir</button></td>
+          `;
+
+          tabelaBody.appendChild(row);
+      });
+  }
+
+  // Listar todos os agendamentos no console (para debug)
+  function listarAgendamentos() {
+      const agendamentos = JSON.parse(localStorage.getItem("consultas")) || [];
+
+      if (agendamentos.length === 0) {
+          console.log("Nenhum agendamento encontrado.");
+          return;
+      }
+
+      agendamentos.forEach(agendamento => {
+          console.log(`
+              Paciente: ${agendamento.nome} 
+              Sobrenome: ${agendamento.sobrenome}
+              Cpf: ${agendamento.cpf}
+              Data Nascimento ${agendamento.dataNascimento}
+              Médico: ${agendamento.medico}
+              Horário: ${agendamento.horario}
+              Agendado por: ${agendamento.agendadoPor}
+          `);
+      });
+  }
+
+  // Excluir um agendamento
+  function excluirConsulta(index) {
+      const agendamentos = JSON.parse(localStorage.getItem("consultas")) || [];
+
+      if (index < 0 || index >= agendamentos.length) {
+          alert("Índice inválido.");
+          return;
+      }
+
+      agendamentos.splice(index, 1);
+      localStorage.setItem("consultas", JSON.stringify(agendamentos));
+
+      alert("Agendamento excluído com sucesso.");
+      exibirAgendamentos(); // Atualizar a tabela
+  }
+
+  // Atualizar agendamentos ao selecionar um médico no filtro
+  const medicoSelect = document.getElementById("medico");
+  medicoSelect.addEventListener("change", () => {
+      const medico = medicoSelect.value || null;
+      exibirAgendamentos(medico);
+  });
+
+  // Exibir agendamentos ao carregar a página
+  exibirAgendamentos();
+</script>
+
+
+
+
+<style>
+
+a{
+  list-style: none;
+
+}
+
+h1 {
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+
+
+  label {
+    display: block; 
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+
+  input, select, button {
+    width: 100%; /* Preenche a célula */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  tr{
+    text-align: center;
+  }
+th{
+  text-align: center;
+  width: 200px;
+}
+
+
+.consulta-container {
+width: 78%;
+background: #ffffff;
+padding: 10px;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+font-family: Arial, sans-serif;
+margin: 102px 395px;
+}
+
+@media (max-width: 1300px) {
+  .consulta-container {
+    width: 68%;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    margin: 105px 402px;
+}
+}
+
+body{
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.consulta-container h1 {
+text-align: center;
+margin-bottom: 20px;
+color: #333;
+}
+
+.consulta-container label {
+display: block;
+font-weight: bold;
+margin-bottom: 5px;
+color: #555;
+}
+
+.consulta-container input {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+margin-bottom: 20px;
+font-size: 14px;
+}
+
+button {
+  margin-top: 20px;
+}
+
+.consulta-container button {
+width: 100%;
+padding: 8px;
+background-color: #4CAF50;
+color: white;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+margin-bottom: 10px;
+}
+
+.consulta-container button:hover {
+background-color: #3c833f; 
+}
+
+.consulta-container .excluir {
+background-color: #FF5733; 
+}
+
+.consulta-container .excluir:hover {
+background-color: #E74C3C; 
+}
+
+.resultado-container {
+margin-top: 20px;
+padding: 15px;
+background-color: #f9f9f9;
+border: 1px solid #ddd;
+border-radius: 5px;
+}
+
+.resultado-container p {
+font-size: 14px;
+color: #333;
+margin: 5px 0;
+}
+</style>
+
+
+</body>

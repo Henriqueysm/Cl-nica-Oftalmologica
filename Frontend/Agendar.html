@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clínica Oftalmológica">
+  <title>Agendamento | Clínica Saúde Ocular</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/png" href="saude 2.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body class="fundo">
+  <a href="home.html">
+  <div class="topo"></div></a>
+
+
+  <div class="nav-side-menu">
+  
+    <div class="menu-list">
+
+        <ul id="menu-content" class="menu-content collapse out">
+          <div class="welcome-container">
+            <h2>Bem-vindo, <span id="nomeUsuario"></span>!</h2>
+          </div>
+        
+          <div class="user-profile">
+            <img id="fotoUsuario" src="default-avatar.png" alt="img">
+            <span id="nomeUsuarioFooter"></span>
+          </div>
+            <li  data-toggle="collapse" data-target="#products" class="collapsed active">
+              <a href="#">
+                <span class="arrow"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                  <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                </svg>  </span></a>
+            </li>
+
+            <ul class="sub-menu collapse" id="products">
+                <li class=""><a href="home.html"> Pagina Inicial </a></li>
+                <li class=""><a href="Agendar.html"  onclick="mostrarAgendar()">Agendar Paciente </a></li>
+                <li class=""><a href="Consultar.html" onclick="mostrarConsultar()">Consultar Agendamento </a></li>
+
+            </ul>
+
+        </ul>
+        
+ </div>
+
+
+         <a href="Login.html">  
+          <button class="button">
+            <div class="button-box">
+              <span class="button-elem">
+                <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+                  ></path>
+                </svg>
+              </span>
+              <span class="button-elem">
+                <svg viewBox="0 0 46 40">
+                  <path
+                    d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+          </button></a>
+          
+    </div>
+
+
+
+
+    <main>
+      <section>
+        <form id="form-agendamento">
+          <table align="right">
+            <tr> 
+              <td colspan="2" align="center"> <h1> Preencha os dados para agendar</h1>
+              </td>
+            </tr> 
+
+            <tr>          
+              <td class="form-group">             
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+              </td>
+
+              <td class="form-group">
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome" required>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="form-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" maxlength="14">
+              </td>
+
+            <td class="form-group">
+                <label for="dataNasc">Data de Nascimento:</label>
+                <input type="date" id="dataNasc" name="dataNasc" class="input-data-nascimento">
+            </td>
+            </tr>
+            <!--
+            <tr>
+              <td colspan="2" class="form-group">
+                <label>Sexo:</label>
+                <label><input type="radio" name="sexo" value="Masculino"> Masculino</label>
+                <label><input type="radio" name="sexo" value="Feminino"> Feminino</label>
+              </td>
+            </tr>
+-->
+            <tr>
+              <td colspan="2" class="form-group">
+                <label for="medico">Escolha o médico:</label>
+                <select id="medico" required>
+                    <option value="" disabled selected>Selecione um médico</option>
+                    <option value="Dr_Marcos">Dr. Marcos</option>
+                    <option value="Dr_José">Dr. José</option>
+                    <option value="Dra_Maria">Dra. Maria</option>
+                </select>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="2" class="form-group">
+                  <label for="horario">Escolha o horário:</label>
+                  <select id="horario" required>
+                      <option value="" disabled selected>Selecione um horário</option>
+                  </select>
+              </td>
+            </tr>
+           
+            <tr>
+              <td colspan="2">
+                <button type="submit">Agendar Consulta</button>             </td>
+            </tr>
+          </table>
+        </form>
+      </section>
+    </main>
+    
+   
+
+    <script>
+  // Verificar se o usuário está logado
+  function verificarLogin() {
+  const nomeUsuario = localStorage.getItem("nomeUsuario");
+
+  if (!nomeUsuario) {
+    // Redirecionar para a página de login se não estiver logado  
+    alert("Você precisa estar logado para acessar esta página.");
+    window.location.href = "login.html";
+  }
+}
+
+// Chamar a função de validação ao carregar a página
+verificarLogin();
+
+      // Recuperar informações do usuário logado
+      const nomeUsuario = localStorage.getItem("nomeUsuario") || "Usuário";
+      const fotoUsuario = localStorage.getItem("fotoUsuario") || "default-avatar.png";
+  
+      document.getElementById("nomeUsuario").textContent = nomeUsuario;
+      document.getElementById("nomeUsuarioFooter").textContent = nomeUsuario;
+      document.getElementById("fotoUsuario").src = fotoUsuario;
+  
+      const horario = {
+          Dr_Marcos: [
+          "09-12-2024 ás 09:47", "17-12-2024 ás 14:20"],
+
+          Dr_José: [
+          "06-12-2024 ás 15:15", "10-12-2024 ás 12:00"],
+
+          Dra_Maria: [
+          "17-12-2024 ás 08:33", "19-12-2024 ás 16:50"],
+      };
+  
+      // Função para verificar horários ocupados
+      function getHorariosOcupados() {
+          const agendamentos = JSON.parse(localStorage.getItem("consultas")) || [];
+          return agendamentos.map(agendamento => agendamento.horario);
+      }
+  
+      // Selecionar elementos do DOM
+      const medicoSelect = document.getElementById("medico");
+      const horarioSelect = document.getElementById("horario");
+      const formAgendamento = document.getElementById("form-agendamento");
+  
+      // Atualizar horários com base no médico selecionado
+      medicoSelect.addEventListener("change", function () {
+          const medico = this.value;
+          horarioSelect.innerHTML = `<option value="" disabled selected>Selecione um horário</option>`; // Resetar opções
+  
+          if (medico && horario[medico]) {
+              const horariosOcupados = getHorariosOcupados(); // Recuperar horários ocupados
+              horario[medico].forEach(horarioItem => {
+                  if (!horariosOcupados.includes(horarioItem)) { // Excluir horários ocupados
+                      const option = document.createElement("option");
+                      option.value = horarioItem;
+                      option.textContent = horarioItem;
+                      horarioSelect.appendChild(option);
+                  }
+              });
+          }
+      });
+  
+      // Salvar agendamento no localStorage
+      formAgendamento.addEventListener("submit", function (event) {
+          event.preventDefault();
+  
+          const nome = document.getElementById("nome").value.trim();
+          const sobrenome = document.getElementById("sobrenome").value.trim();
+          const cpf = document.getElementById("cpf").value.trim();
+          const dataNascimento = document.getElementById("dataNasc").value;
+          const medico = medicoSelect.value;
+          const horario = horarioSelect.value;
+          const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+  
+          // Validações
+          if (!nome || !sobrenome || !cpf || !dataNascimento || !medico || !horario) {
+              alert("Por favor, preencha todos os campos.");
+              return;
+          }
+  
+          if (!usuarioLogado) {
+              alert("Você precisa estar logado para agendar uma consulta.");
+              return;
+          }
+  
+          // Criar objeto de agendamento
+          const agendamento = {
+              nome,
+              sobrenome,
+              cpf,
+              dataNascimento,
+              medico,
+              horario,
+              agendadoPor: usuarioLogado.nome // Associar usuário logado ao agendamento
+          };
+  
+          // Atualizar localStorage
+          const agendamentos = JSON.parse(localStorage.getItem("consultas")) || [];
+          agendamentos.push(agendamento);
+          localStorage.setItem("consultas", JSON.stringify(agendamentos));
+  
+          // Limpar formulário e notificar sucesso
+    formAgendamento.reset();
+    alert(`Consulta agendada com sucesso com ${medico} no dia ${horario}!`);
+});
+  </script>
+  
+    
+  
+
+
+
+      <style>
+        
+        table { /*Só pra mim localizar que é a tabela media query para maiores telas */
+          border-radius: 10px;
+          width: 78%; 
+          background-color: #ffffff; 
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          margin: auto 4px; 
+          font-family: Arial, sans-serif;
+          border-radius: 10px; 
+          overflow: hidden;
+          margin-top: 102px;
+        }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #007BFF;
+      color: #ffffff;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .mensagem {
+      font-size: 14px;
+    }
+
+    body {
+      overflow: scroll;
+      overflow-x: hidden;
+    }
+
+
+      
+     
+        td {
+          padding: 15px; 
+          vertical-align: top; 
+          border: 1px solid #ddd; 
+        }
+      
+        td label {
+          display: block; 
+          font-weight: bold;
+          margin-bottom: 5px;
+          color: #555;
+        }
+      
+        td input, td select, td button {
+          width: 100%; 
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 14px;
+        }
+      
+        td input[type="radio"] {
+          width: auto; 
+          margin-right: 5px;
+        }
+      
+        td button {
+          background-color: #4CAF50; 
+          color: white;
+          font-size: 16px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          border: none;
+        }
+      
+        td button:hover {
+          background-color: #3c833f; 
+        }
+      
+        tr:nth-child(even) {
+          background-color: #f9f9f9; 
+        }
+      
+        tr:nth-child(odd) {
+          background-color: #ffffff;
+        }
+
+        @media (max-width: 1300px) {
+          table {
+          border-radius: 10px;
+          width: 68%; 
+          background-color: #ffffff; 
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          margin: auto 8px; 
+          font-family: Arial, sans-serif;
+          border-radius: 10px; 
+          overflow: hidden;
+          margin-top: 8%;
+        }
+          
+
+      }
+
+      </style>
+      
+ 
+</body>

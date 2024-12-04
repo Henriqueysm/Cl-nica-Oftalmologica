@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clinica Oftalmologista">
+  <title> Home | Clinica Saúde Ocular </title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" type="image/png" href="saude 2.png">
+</head>
+
+<body class="fundo">
+
+  <a href="home.html">
+    <div class="topo"></div></a>
+
+<a asp-controller="Home" asp-action="Agendar">Agendar</a> | 
+<a asp-controller="Home" asp-action="Consultar">Consultar</a>
+ 
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+
+<div class="nav-side-menu">
+  
+        <div class="menu-list">
+  
+            <ul id="menu-content" class="menu-content collapse out">
+              <div class="welcome-container">
+                <h2>Bem-vindo, <span id="nomeUsuario"></span>!</h2>
+              </div>
+            
+              <div class="user-profile">
+                <img id="fotoUsuario" src="default-avatar.png" alt="img">
+                <span id="nomeUsuarioFooter"></span>
+              </div>
+              <li  data-toggle="collapse" data-target="#products" class="collapsed active">
+                <a href="#">
+                  <span class="arrow"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                    <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                  </svg>  </span></a>
+              </li>
+  
+              <ul class="sub-menu collapse" id="products">
+                  <li class=""><a href="home.html"> Pagina Inicial </a></li>
+                  <li class=""><a href="Agendar.html"  onclick="mostrarAgendar()">Agendar Paciente </a></li>
+                  <li class=""><a href="Consultar.html" onclick="mostrarConsultar()">Consultar Agendamento </a></li>
+  
+              </ul>
+
+            </ul>
+            
+     </div>
+                   
+
+  <a href="Login.html">  <button class="button">
+       <div class="button-box">
+         <span class="button-elem">
+           <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+             <path
+               d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+             ></path>
+           </svg>
+         </span>
+         <span class="button-elem">
+           <svg viewBox="0 0 46 40">
+             <path
+               d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+             ></path>
+           </svg>
+         </span>
+       </div>
+     </button></a>
+     
+                      
+                     
+                    </div>
+</div>
+
+<div class="carousel">
+  <div class="carousel-images">
+      <img src="carrousel/1.png" alt="Imagem 1">
+      <img src="carrousel/2.png" alt="Imagem 2">
+      <img src="carrousel/3.png" alt="Imagem 3">
+      <img src="carrousel/4.png" alt="Imagem 4">
+  </div>
+  <div class="carousel-indicators">
+      <span class="indicator active" onclick="goToSlide(0)"></span>
+      <span class="indicator" onclick="goToSlide(1)"></span>
+      <span class="indicator" onclick="goToSlide(2)"></span>
+      <span class="indicator" onclick="goToSlide(3)"></span>
+  </div>
+</div>
+
+  
+  <script src="carousel.js"></script>
+  </section>
+
+
+<link rel="stylesheet" href="carousel.css">
+
+
+
+<script>
+  // Verificar se o usuário está logado
+function verificarLogin() {
+  const nomeUsuario = localStorage.getItem("nomeUsuario");
+
+  if (!nomeUsuario) {
+    // Redirecionar para a página de login se não estiver logado
+    alert("Você precisa estar logado para acessar esta página.");
+    window.location.href = "login.html";
+  }
+}
+
+// Chamar a função de validação ao carregar a página
+verificarLogin();
+
+
+      const nomeUsuario = localStorage.getItem("nomeUsuario") || "Usuário";
+    const fotoUsuario = localStorage.getItem("fotoUsuario") || "default-avatar.png";
+    document.getElementById("nomeUsuario").textContent = nomeUsuario;
+    document.getElementById("nomeUsuarioFooter").textContent = nomeUsuario;
+    document.getElementById("fotoUsuario").src = fotoUsuario;
+
+  let agendamentos = [];
+
+  function login() {
+      const usuario = document.getElementById("usuario").value;
+      const senha = document.getElementById("senha").value;
+
+      if (usuario === "admin" && senha === "123") {
+          document.getElementById("login").classList.add("hidden");
+          document.getElementById("menu").classList.remove("hidden");
+      } else {
+          document.getElementById("loginError").innerText = "Usuário ou senha inválidos!";
+      }
+  }
+
+  function mostrarAgendar() {
+      document.getElementById("menu").classList.add("hidden");
+      document.getElementById("agendar").classList.remove("hidden");
+  }
+
+  function mostrarConsultar() {
+      document.getElementById("menu").classList.add("hidden");
+      document.getElementById("consultar").classList.remove("hidden");
+  }
+
+  function voltarMenu() {
+      document.getElementById("agendar").classList.add("hidden");
+      document.getElementById("consultar").classList.add("hidden");
+      document.getElementById("menu").classList.remove("hidden");
+  }
+
+  function agendar() {
+      const nome = document.getElementById("nome").value;
+      const cpf = document.getElementById("cpf").value;
+      const data = document.getElementById("data").value;
+
+      if (nome && cpf && data) {
+          agendamentos.push({ nome, cpf, data });
+          document.getElementById("agendarSucesso").innerText = "Agendamento realizado com sucesso!";
+          document.getElementById("nome").value = "";
+          document.getElementById("cpf").value = "";
+          document.getElementById("data").value = "";
+      } else {
+          document.getElementById("agendarSucesso").innerText = "Preencha todos os campos!";
+      }
+  }
+
+  function consultar() {
+      const cpf = document.getElementById("cpfConsulta").value;
+      const resultado = document.getElementById("resultadoConsulta");
+
+      const agendamento = agendamentos.find(a => a.cpf === cpf);
+
+      if (agendamento) {
+          resultado.innerHTML = `
+              <h3>Agendamento Encontrado</h3>
+              <p><strong>Nome:</strong> ${agendamento.nome}</p>
+              <p><strong>CPF:</strong> ${agendamento.cpf}</p>
+              <p><strong>Data:</strong> ${agendamento.data}</p>
+          `;
+      } else {
+          resultado.innerHTML = "<p style='color: red;'>Nenhum agendamento encontrado para este CPF.</p>";
+      }
+  }
+</script>
+    
+
+
+
+</body>
