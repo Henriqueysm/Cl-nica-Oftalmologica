@@ -1,8 +1,8 @@
 # Clinica Saúde Ocular
 
-Este é o projeto de uma Clínica Oftalmologica. Veja abaixo algumas imagens do sistema.
+Este é o projeto de uma Clínica Oftalmologica, feita em equipe aonde foi feito tanto como BackEnd e também FrontEnd. Veja abaixo algumas imagens do sistema.
 
-## Imagens do Sistema
+## Imagens do Sistema FrontEnd
 
 ![Tela de Login](Frontend/ImagensSistema/login.jpg)
 ![Tela inicial](Frontend/ImagensSistema/home.jpg)
