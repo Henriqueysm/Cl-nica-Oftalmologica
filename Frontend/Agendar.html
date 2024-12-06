@@ -2,149 +2,140 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="description" content="Clínica Oftalmológica">
   <title>Agendamento | Clínica Saúde Ocular</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="shortcut icon" type="image/png" href="saude 2.png">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
+
 <body class="fundo">
+
   <a href="home.html">
-  <div class="topo"></div></a>
+    <div class="topo"></div></a>
 
 
-  <div class="nav-side-menu">
+
+<button class="botão-toggle" id="menu-toggle" aria-label="Abrir Menu">
+  <span class="arrow"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+      <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+  </svg>  </span>
+</button>
+
+
+<nav id="nav-menu" class="hidden">
   
-    <div class="menu-list">
+<div class="welcome-container">
+<h2>Bem-vindo, <span id="nomeUsuario"></span>!</h2>
+</div>
 
-        <ul id="menu-content" class="menu-content collapse out">
-          <div class="welcome-container">
-            <h2>Bem-vindo, <span id="nomeUsuario"></span>!</h2>
-          </div>
-        
-          <div class="user-profile">
-            <img id="fotoUsuario" src="default-avatar.png" alt="img">
-            <span id="nomeUsuarioFooter"></span>
-          </div>
-            <li  data-toggle="collapse" data-target="#products" class="collapsed active">
-              <a href="#">
-                <span class="arrow"> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
-                  <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
-                </svg>  </span></a>
-            </li>
+<ul id="menu-content" class="menu-content collapse out">
+<li class=""><a href="home.html"> Pagina Inicial </a></li>
+<li class=""><a href="Agendar.html"  onclick="mostrarAgendar()">Agendar Paciente </a></li>
+<li class=""><a href="Consultar.html" onclick="mostrarConsultar()">Consultar Agendamento </a></li>
+</ul>
 
-            <ul class="sub-menu collapse" id="products">
-                <li class=""><a href="home.html"> Pagina Inicial </a></li>
-                <li class=""><a href="Agendar.html"  onclick="mostrarAgendar()">Agendar Paciente </a></li>
-                <li class=""><a href="Consultar.html" onclick="mostrarConsultar()">Consultar Agendamento </a></li>
-
-            </ul>
-
-        </ul>
-        
- </div>
+<div class="user-profile">
+<img id="fotoUsuario" src="default-avatar.png" alt="img">
+<span id="nomeUsuarioFooter"></span>
+</div>
 
 
-         <a href="Index.html">  
-          <button class="button">
-            <div class="button-box">
-              <span class="button-elem">
-                <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
-                  ></path>
-                </svg>
-              </span>
-              <span class="button-elem">
-                <svg viewBox="0 0 46 40">
-                  <path
-                    d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
-                  ></path>
-                </svg>
-              </span>
-            </div>
-          </button></a>
-          
-    </div>
+<script>
+document.getElementById("menu-toggle").addEventListener("click", function () {
+const navMenu = document.getElementById("nav-menu");
+navMenu.classList.toggle("show");
+});
+</script>
+             
 
 
+            
+
+            
+
+                   
+
+<a href="Login.html" > 
+  <button class="botao-logout">Logout</button>
+
+</a>
+</nav>
+</div>                    
+                     
+                    </div>
+</div>
 
 
-    <main>
-      <section>
-        <form id="form-agendamento">
-          <table align="right">
-            <tr> 
-              <td colspan="2" align="center"> <h1> Preencha os dados para agendar</h1>
-              </td>
-            </tr> 
+<main>
+  <section class="consulta-container">
+    <form id="form-agendamento">
+      <table border="0" class="form-tabela" align="right">
+        <tr>
+          <td colspan="2" class="titulo">
+            <h1>Preencha os dados para agendar</h1>
+          </td>
+        </tr>
+   
+      
+        <tr>
+          <td class="form-group"> 
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+          </td>
 
-            <tr>          
-              <td class="form-group">             
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-              </td>
 
-              <td class="form-group">
-                <label for="sobrenome">Sobrenome:</label>
-                <input type="text" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome" required>
-              </td>
-            </tr>
+          <td class="form-group">
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome" required>
+          </td>
+        </tr>
 
-            <tr>
-              <td class="form-group">
-                <label for="cpf">CPF:</label>
-                <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" maxlength="14">
-              </td>
+       <tr>
+          <td class="form-group">
+            <label for="cpf">CPF:</label>
+                   <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" maxlength="14" required>
+          </td>
+      
+          <td class="form-group">
+            <label for="dataNasc">Data de Nascimento:</label>
+            <input type="date" id="dataNasc" name="dataNasc" required>
+          </td>
+        </tr>
 
-            <td class="form-group">
-                <label for="dataNasc">Data de Nascimento:</label>
-                <input type="date" id="dataNasc" name="dataNasc" class="input-data-nascimento">
-            </td>
-            </tr>
-            <!--
-            <tr>
-              <td colspan="2" class="form-group">
-                <label>Sexo:</label>
-                <label><input type="radio" name="sexo" value="Masculino"> Masculino</label>
-                <label><input type="radio" name="sexo" value="Feminino"> Feminino</label>
-              </td>
-            </tr>
--->
-            <tr>
-              <td colspan="2" class="form-group">
-                <label for="medico">Escolha o médico:</label>
-                <select id="medico" required>
-                    <option value="" disabled selected>Selecione um médico</option>
-                    <option value="Dr_Marcos">Dr. Marcos</option>
-                    <option value="Dr_José">Dr. José</option>
-                    <option value="Dra_Maria">Dra. Maria</option>
-                </select>
-              </td>
-            </tr>
+        <tr class="form-group">
+          <td colspan="2">
+            <label for="medico">Escolha o médico:</label>
+            <select id="medico" name="medico" required>
+              <option value="" disabled selected>Selecione um médico</option>
+              <option value="Dr_Marcos">Dr. Marcos</option>
+              <option value="Dr_José">Dr. José</option>
+              <option value="Dra_Maria">Dra. Maria</option>
+            </select>
+          </td>
+        </tr>
 
-            <tr>
-              <td colspan="2" class="form-group">
-                  <label for="horario">Escolha o horário:</label>
-                  <select id="horario" required>
-                      <option value="" disabled selected>Selecione um horário</option>
-                  </select>
-              </td>
-            </tr>
-           
-            <tr>
-              <td colspan="2">
-                <button type="submit">Agendar Consulta</button>             </td>
-            </tr>
-          </table>
-        </form>
-      </section>
-    </main>
+        <tr>
+        <td colspan="2" class="form-group">
+        <label for="horario">Escolha o horário:</label>
+        <select id="horario" name="horario" required>
+          <option value="" disabled selected>Selecione um horário</option>
+        </select>
+      </td>
+    </tr>
+
+   <tr>
+          <td colspan="2" align="center">
+            <button type="submit" class="btn-submit">Agendar Consulta</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </section>
+</main>
+
     
    
 
@@ -156,7 +147,7 @@
   if (!nomeUsuario) {
     // Redirecionar para a página de login se não estiver logado  
     alert("Você precisa estar logado para acessar esta página.");
-    window.location.href = "Index.html";
+    window.location.href = "login.html";
   }
 }
 
@@ -261,69 +252,78 @@ verificarLogin();
 
 
 
-      <style>
-        
-        table { /*Só pra mim localizar que é a tabela media query para maiores telas */
-          border-radius: 10px;
-          width: 78%; 
-          background-color: #ffffff; 
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-          margin: auto 4px; 
-          font-family: Arial, sans-serif;
-          border-radius: 10px; 
-          overflow: hidden;
-          margin-top: 102px;
-        }
+<style>
 
+body{
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.consulta-container table {
+    background-color: white;
+    border-radius: 15px;
+    width: 71%; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 8% 0.40rem 1%; 
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    font-size: 14px;
+    float: right; 
+}
+
+
+  
     h1 {
-      margin-bottom: 20px;
+      margin: 20px 0 20px;
       font-size: 30px;
+      text-align: center;
+      font-weight: 400;
+      color: #333;
     }
 
 
     label {
       display: block;
-      margin-bottom: 5px;
       font-weight: bold;
+      margin-bottom: 5px;
+      color: #555;
+
+}
+
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        
     }
 
-    input, select, button {
+    button {
       width: 100%;
       padding: 10px;
+      margin-top: 15px;
       margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
 
-    button {
-      background-color: #007BFF;
-      color: #ffffff;
-      font-weight: bold;
-      cursor: pointer;
-      border: none;
-    }
 
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    .mensagem {
-      font-size: 14px;
-    }
-
-    body {
-      overflow: scroll;
-      overflow-x: hidden;
-    }
-
-
-      
      
         td {
-          padding: 15px; 
+          padding: 15px; /*altura do bloco*/
           vertical-align: top; 
-          border: 1px solid #ddd; 
+          border-bottom: 1px solid #ddd;  /*Apenas borda inferior */
         }
+
+        tr:nth-child(2) td {
+          border-right: 2px solid #ddddddc2; /* Borda vermelha */
+      }
+        tr:nth-child(3) td {
+          border-right: 2px solid #ddddddc2; /* Borda vermelha */
+      }
       
         td label {
           display: block; 
@@ -332,12 +332,19 @@ verificarLogin();
           color: #555;
         }
       
-        td input, td select, td button {
-          width: 100%; 
+        td input, td select {
+          width: 90%; 
           padding: 10px;
           border: 1px solid #ccc;
           border-radius: 5px;
           font-size: 14px;
+        }
+
+       input, #horario{
+          width: 100%; 
+        }
+        input, #medico{
+          width: 100%; 
         }
       
         td input[type="radio"] {
@@ -357,6 +364,7 @@ verificarLogin();
         td button:hover {
           background-color: #3c833f; 
         }
+
       
         tr:nth-child(even) {
           background-color: #f9f9f9; 
@@ -366,21 +374,66 @@ verificarLogin();
           background-color: #ffffff;
         }
 
-        @media (max-width: 1300px) {
-          table {
-          border-radius: 10px;
-          width: 68%; 
-          background-color: #ffffff; 
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-          margin: auto 8px; 
-          font-family: Arial, sans-serif;
-          border-radius: 10px; 
-          overflow: hidden;
-          margin-top: 8%;
-        }
+
+/* Botão de logout */
+
+.botao-logout {
+  position: fixed; /* Faz o botão ficar fixo na tela */
+  bottom: -40px;
+  left: 30px;
+  background-color: #007bff; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  border: none; /* Remove bordas padrões */
+  border-radius: 8px; /* Bordas arredondadas */
+  font-size: 16px; /* Tamanho do texto */
+  cursor: pointer; /* Mostra o cursor de clique */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Efeitos de hover */
+  text-decoration: none; /* Remove o sublinhado do link */
+  width: 22%;
+  height: 5vh;
+}
+
+.botao-logout:hover {
+  background-color: #0056b3; /* Cor ao passar o mouse */
+  transform: scale(1.1); /* Leve aumento ao passar o mouse */
+}
+
+.botao-logout:active {
+  transform: scale(1.05); /* Pequeno efeito ao clicar */
+}
           
 
-      }
+  /* Responsividade para celulares */
+  @media (max-width: 768px) {
+
+    .botão-toggle {
+      position: absolute;  
+      top: 0%;           
+      left: 2%;   
+      background-color: #fefefe; /* Cor de fundo do botão */
+      color: rgb(255, 255, 255);     
+      border: none;    
+      cursor: pointer;     
+      border-radius: 5px;  
+  }
+
+  .consulta-container table {
+    background-color: white;
+    border-radius: 15px;
+    width: 97%; 
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20% 0.40rem 1%; 
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    font-size: 14px;
+    float: center; 
+}
+
+
+
+  }
 
       </style>
       
